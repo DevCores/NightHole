@@ -25,51 +25,35 @@
       <div id="content">
          <div id="page">
          </div>
+         @if($posts->count() > 0)
+         @foreach($posts as $post)
          <div id="content-box">
-            <img src="assets/images/news1.jpg" class="featured_image">
-            <h1>Сервер на стадии разработки</h1>
-            <h2>Опубликовано: 10 января, 2021</h2>
-            <p>Сервер находится на стадии разработки. Следите за новостями в нашей группе Вконтакте.</p>
+            <img src="storage/{{$post->image}}" class="featured_image">
+            <h1>{{$post->title}}</h1>
+            <h2>Опубликовано: {{Date::parse($post->created_at)->format('j F Y ')}}  </h2>
+            <h2> Категория: {{$post->category->name}}  </h2>
+            <p>{!!$post->excerpt!!}</p>
          </div>
-         <div id="content-box">
-            <img src="assets/images/news2.jpg" class="featured_image">
-            <h1>Голосование за сервер </h1>
-            <h2>Опубликовано: 10 января 2021</h2>
-            <p>Голосуйте за наш сервер в личном кабинете и получайте за это награды.</p>
-         </div>
+         @endforeach
+         @else
          <div id="content-box">
             <img src="assets/images/news-legionaccepted.jpg" class="featured_image">
-            <h1>Поиск тестеров</h1>
-            <h2>Опубликовано: в 2022 году</h2>
-            <p>В связи с разработкой проекта мы ищем активных игроков, готовых проверять работоспособность нашего контента и поиска недоработок для их исправления. </p>
+            <center><h1>Новости не добавлялись</h1></center>
          </div>
+         @endif
+         @if($hows->count() > 0)
          <div id="features">
             <h4 class="big">ПОЧЕМУ МЫ?</h4>
+            @foreach($hows as $how)
             <div id="feature_box">
-               <img src="assets/images/featured-server.jpg">
-               <h4>Работоспособность</h4>
-               Круглосуточная поддержка, обновления мира происходят еженедельно.
+               <img src="storage/{{$how->image}}">
+               <h4>{{$how->title}}</h4>
+               {!!$how->body!!}
             </div>
-            <div id="feature_box">
-               <img src="assets/images/topgame.jpg">
-               <h4>Комфортная игра</h4>
-               Сервер расположен в Москве, благодаря этому у нас всегда минимальный пинг.
-            </div>
-            <div id="feature_box">
-               <img src="assets/images/featured-legion.jpg">
-               <h4>Высокий онлайн</h4>
-               Найдите новых друзей или компанию для совместной игры на нашем сервере.
-            </div>
-            <div id="feature_box">
-               <img src="assets/images/nodonate.jpg">
-               <h4>Отсутствие доната</h4>
-               На нашем сервере нельзя приобрести предметы, которые повлияют на игровой процесс.
-            </div>
+            @endforeach
          </div>
+         @endif
       </div>
    </div>
 </div>
 @endsection
-
-
-

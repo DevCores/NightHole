@@ -25,24 +25,7 @@
       <div id="content">
          <div id="page">
          </div>
-         <div id="content-box">
-            <img src="assets/images/news1.jpg" class="featured_image">
-            <h1>Сервер на стадии разработки</h1>
-            <h2>Опубликовано: 10 января, 2021</h2>
-            <p>Сервер находится на стадии разработки. Следите за новостями в нашей группе Вконтакте.</p>
-         </div>
-         <div id="content-box">
-            <img src="assets/images/news2.jpg" class="featured_image">
-            <h1>Голосование за сервер </h1>
-            <h2>Опубликовано: 10 января 2021</h2>
-            <p>Голосуйте за наш сервер в личном кабинете и получайте за это награды.</p>
-         </div>
-         <div id="content-box">
-            <img src="assets/images/news-legionaccepted.jpg" class="featured_image">
-            <h1>Поиск тестеров</h1>
-            <h2>Опубликовано: в 2022 году</h2>
-            <p>В связи с разработкой проекта мы ищем активных игроков, готовых проверять работоспособность нашего контента и поиска недоработок для их исправления. </p>
-         </div>
+         
          <div id="features">
             <h4 class="big">ПОЧЕМУ МЫ?</h4>
             <div id="feature_box">

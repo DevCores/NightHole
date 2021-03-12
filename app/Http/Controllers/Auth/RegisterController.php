@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Services\Soap\Soap;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -66,13 +67,37 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         //Разрешение на регистрацию игрового аккаунта
-        if(env('REGISTER_ACCOUNTS')) {
-            (new Soap)->cmd('.bnetaccount create ' . $data['email'] . ' ' . $data['password']);
+        
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function register(Request $request)
+    {
+
+        
+        $validator = Validator::make($request->all(), [
+           'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        
+        if ($validator->passes()) {
+            if(env('REGISTER_ACCOUNTS')) {
+            (new Soap)->cmd('.bnetaccount create ' . $data['email'] . ' ' . $data['password']);
+        }
+             User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+            'ref' => $request->input('ref'),
+        ]);
+            return response()->json('success');
+        }
+        return response()->json(['error'=>$validator->errors()->all()]);
     }
 }

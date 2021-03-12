@@ -53,6 +53,7 @@ input::-ms-clear, textarea::-ms-clear {
 Main components 
 
 -------------------------------- */
+
 .cd-user-modal {
   visibility: hidden;
   opacity: 0;
@@ -334,7 +335,6 @@ xsigin/signup popup
   border-radius: 0.25em;
   /* prevent click and touch events */
   pointer-events: none;
-  visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
   -moz-transition: opacity 0.2s 0, visibility 0 0.2s;

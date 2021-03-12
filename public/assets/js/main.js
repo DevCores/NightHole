@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
 			passwordField = togglePass.prev('input');
 		
 		( 'password' == passwordField.attr('type') ) ? passwordField.attr('type', 'text') : passwordField.attr('type', 'password');
-		( 'Hide' == togglePass.text() ) ? togglePass.text('Show') : togglePass.text('Hide');
+		( 'Скрыть' == togglePass.text() ) ? togglePass.text('Показать') : togglePass.text('Скрыть');
 		//focus and move cursor to the end of input field
 		passwordField.putCursorAtEnd();
 	});
@@ -101,27 +101,7 @@ jQuery(document).ready(function($){
 
 	//IE9 placeholder fallback
 	//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
-	if(!Modernizr.input.placeholder){
-		$('[placeholder]').focus(function() {
-			var input = $(this);
-			if (input.val() == input.attr('placeholder')) {
-				input.val('');
-		  	}
-		}).blur(function() {
-		 	var input = $(this);
-		  	if (input.val() == '' || input.val() == input.attr('placeholder')) {
-				input.val(input.attr('placeholder'));
-		  	}
-		}).blur();
-		$('[placeholder]').parents('form').submit(function() {
-		  	$(this).find('[placeholder]').each(function() {
-				var input = $(this);
-				if (input.val() == input.attr('placeholder')) {
-			 		input.val('');
-				}
-		  	})
-		});
-	}
+	
 
 });
 

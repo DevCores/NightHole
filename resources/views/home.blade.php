@@ -4,12 +4,6 @@
 <div id="holder" class="main">
    <div id="container" class="main">
       <div id="sidebar">
-         @if (session('status'))
-         <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-         </div>
-         @endif
-         {{ __('You are logged in!') }}
          <div id="">
          </div>
          <div id="sidebar-box">

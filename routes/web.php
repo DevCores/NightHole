@@ -22,3 +22,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

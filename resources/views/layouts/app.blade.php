@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>the NightHold - Бесплатный игровой сервер World of Warcraft</title>
+        <title>{{setting('site.title')}} - {{setting('site.description')}}</title>
         <bgsound src="song.html" loop="infinite">
         <link rel="shortcut icon" href="assets/favicon.gif">
-        <title>{{ config('app.name', 'Laravel') }}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
@@ -35,13 +34,10 @@
                 <div id="logo">
                 </div>
                 <div id="navigation">
+
                     <ul>
-                        <img src="assets/images/logo.png" class="featured_image">
-                        <li><a href="{{ url('/') }}">ГЛАВНАЯ</a></li>
-                        <li><a href="/"> КАК НАЧАТЬ ИГРАТЬ</a></li>
-                        <li><a href="/">ФОРУМ</a></li>
-                        <li><a href="/">ЛАДДЕР</a></li>
-                        <li><a href="/">ПОДДЕРЖКА</a></li>
+                        <img src="/storage/{{setting('site.logo')}}" class="featured_image">
+                        {{menu('Меню сайта')}}
                     </ul>
                     @auth
                     

@@ -15,6 +15,7 @@ class CreateRealmlistsTable extends Migration
     {
         Schema::create('realmlists', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->default('New World');
             $table->integer('world_id')->default(0);
             $table->string('ip')->default('0.0.0.0');
             $table->string('port')->default(0);

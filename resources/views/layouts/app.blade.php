@@ -26,6 +26,9 @@
              document.oncontextmenu = cmenu; function cmenu() { return false; } 
         </script>
     </head>
+    @if (session('status'))
+        {{ session('status') }}
+    @endif
     <body>
         <div id="holder" class="header">
             <div id="container" class="navigation">
@@ -187,7 +190,7 @@
             </div>
             <!-- cd-user-modal-container -->
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -300,5 +303,4 @@
                     
                 });
         </script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     </body>

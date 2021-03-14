@@ -19,9 +19,7 @@ class Locale
      */
     public function handle($request, Closure $next)
     {   
-        $raw_locale = Session::get('locale');     # Если пользователь уже был на нашем сайте, 
-                                                  # то в сессии будет значение выбранного им языка.
-            $locale = $raw_locale;                                # (а не какая-нибудь бяка) 
+        $locale = Session::get('locale');     # Если пользователь уже был на нашем сайте, 
         App::setLocale($locale);
         return $next($request);                                   # И позволяем приложению работать дальше
     }

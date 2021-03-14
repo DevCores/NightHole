@@ -23,7 +23,7 @@ Route::get('/setlocale/{locale}', function ($locale) {
     
     	Session::put('locale', $locale);                    # И устанавливаем его в сессии под именем locale
 
-    return redirect('welcome');                              # Редиректим его <s>взад</s> на ту же страницу
+    return redirect('/');                              # Редиректим его <s>взад</s> на ту же страницу
 
 });
 

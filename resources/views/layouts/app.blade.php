@@ -94,8 +94,12 @@
         <div id="holder" class="footer">
         <div id="container" class="footer">
             <a href="#">написать администрации</a> - <a href="#">голосовать за сервер</a> - <a href="#">информация о сервере</a> - <a href="#">как начать играть</a><br><br>
+            <a href="/setlocale/en">EN</a>
+            <a href="/setlocale/ru">RU</a><br><br>
             Copyright &copy; NightHold 2020-2021. Все права защищены.
             <audio src="" autoplay>
+            
+            
         </div>
         <div class="cd-user-modal">
             <!-- this is the entire modal form, including the background -->

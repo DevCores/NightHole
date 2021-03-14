@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use TCG\Voyager\Models\Post;
 use App\Models\How;
 
+
 class IndexController extends Controller
 {
 
@@ -19,7 +20,6 @@ class IndexController extends Controller
     {
     	$posts = Post::all();
     	$hows = How::all();
-
 
         return view('welcome' , compact('posts', 'hows'));
     }

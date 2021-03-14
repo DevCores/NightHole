@@ -39,23 +39,18 @@
                     <ul>
                         <img src="/storage/{{setting('site.logo')}}" class="featured_image">
                         {{menu('Меню сайта')}}
-                         <li tabindex="1" class="online" data-html="true" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-containertitle="true" data-content="<div class='bs4'>                                <div class='d-flex justify-content-between'>
-                                    <div class='mr-3'>NightHold x10 - 3.3.5а+ </div>
-                                    <div>54</div>
-                                </div>
-                                                              <div class='d-flex justify-content-between'>
-                                    <div class='mr-3'>NightHold x2 - 3.3.5a+</div>
-                                    <div>6046</div>
-                                </div>
-                                                              <div class='d-flex justify-content-between'>
-                                    <div class='mr-3'>NightHold x3 - 3.3.5a+</div>
-                                    <div>102</div>
-                                </div>
-                                                              <div class='d-flex justify-content-between'>
-                                    <div class='mr-3'>NightHold x4 - 3.3.5a</div>
-                                    <div>6678</div>
-                                </div>
-                               </div>"><div>В игре : 300</div></li>
+                         <li tabindex="1" class="online" data-html="true" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-containertitle="true" data-content="
+
+                        <div class='bs4'>
+                            @foreach($online as $key => $value)
+                                @if($key != 'all')                              
+                                    <div class='d-flex justify-content-between'>
+                                            <div class='mr-3'>{{ $key}}</div>
+                                            <div>{{$value}}</div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>"><div>В игре : {{$online['all']}}</div></li>
 
                         
                         

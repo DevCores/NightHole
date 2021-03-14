@@ -19,7 +19,13 @@ Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('w
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::get('/setlocale/{locale}', function ($locale) {
+    
+    	Session::put('locale', $locale);                    # И устанавливаем его в сессии под именем locale
 
+    return redirect()->back();                              # Редиректим его <s>взад</s> на ту же страницу
+
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

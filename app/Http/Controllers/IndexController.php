@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Post;
 use App\Models\How;
+use \App;
+use Session;
 
 
 class IndexController extends Controller
 {
-
 
     /**
      * Show the application dashboard.
@@ -18,8 +19,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-    	$posts = Post::all();
-    	$hows = How::all();
+
+    	$posts = Post::all()->translate(Session::get('locale'));
+    	$hows = How::all()->translate(Session::get('locale'));
 
         return view('welcome' , compact('posts', 'hows'));
     }

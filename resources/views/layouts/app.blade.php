@@ -50,7 +50,7 @@
                                     </div>
                                 @endif
                             @endforeach
-                        </div>"><div>В игре : {{$online['all']}}</div></li>
+                        </div>"><div>{{__('translate.ingame')}} : {{$online['all']}}</div></li>
 
                         
                         
@@ -61,7 +61,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <ul class="right main-nav">
-                            <li class="xgreen-overlay"><button class="exit" type="submit">ВЫХОД</button></li>
+                            <li class="xgreen-overlay"><button class="exit" type="submit">{{__('translate.exit')}}</button></li>
                             </ul>
                     </form>
                     
@@ -70,8 +70,8 @@
                     </ul>
                     @else
                     <ul class="right main-nav">
-                        <li class="xgreen-overlay"><a class="cd-signup" href="#">РЕГИСТРАЦИЯ</a></li>
-                        <li class="xgreen-overlay"><a class="cd-signin" href="#">ЛИЧНЫЙ КАБИНЕТ</a></li>
+                        <li class="xgreen-overlay"><a class="cd-signup" href="#">{{__('translate.reg')}}</a></li>
+                        <li class="xgreen-overlay"><a class="cd-signin" href="#">{{__('translate.lk')}}</a></li>
                     </ul>
                     @endauth
                    
@@ -86,7 +86,7 @@
             </video>
             <div id="introtext">
                 <div class="gotoplay">
-                    <a  href="#" class="butt">Начать играть</a>
+                    <a  href="#" class="butt">{{__('translate.start')}}</a>
                 </div>
             </div>
             @yield('content')
@@ -102,8 +102,8 @@
             <div class="cd-user-modal-container">
                 <!-- this is the container wrapper -->
                 <ul class="cd-switcher">
-                    <li><a href="#0" class="selected">АВТОРИЗАЦИЯ</a></li>
-                    <li><a href="#0">РЕГИСТРАЦИЯ</a></li>
+                    <li><a href="#0" class="selected">{{__('translate.lk')}}</a></li>
+                    <li><a href="#0">{{__('translate.reg')}}</a></li>
                 </ul>
                 <div id="cd-login" class="is-selected">
                     <!-- log in form -->

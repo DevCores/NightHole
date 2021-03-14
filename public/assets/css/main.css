@@ -23,6 +23,22 @@
 	border-radius: 0px;
 	background-color: #17621a;
 }
+.popover-body{
+    color: white;
+    background: -webkit-linear-gradient(top,#2f4e16,#4b841c 38%,#4f8b1d 60%,#4b841c 86%,#171717);
+}
+.arrow::after{
+    border-bottom-color: #2f4e16 !important;
+}
+.online{
+    padding: 0px 17px 0px 21px;
+    color: #f8b700;
+    background-image: -webkit-linear-gradient(top,#2f4e16,#4b841c 38%,#4f8b1d 60%,#4b841c 86%,#171717);
+    color: #ffffff !important;
+}
+.fullonline{
+    position: absolute;
+}
 .text-danger{
     padding: 11px;
     border-radius: 3px;
@@ -39,7 +55,7 @@ button.exit {
     text-transform: none;
     -webkit-transition: background .2s,color .2s;
     transition: background .2s,color .2s;
-    padding: 28px;
+    padding: 0px 28px 0px 28px;
     font-size: 1em;
     font-family: 'Proza Libre', sans-serif;
     border: none;
@@ -54,7 +70,7 @@ button.exit:hover {
     text-transform: none;
     -webkit-transition: background .2s,color .2s;
     transition: background .2s,color .2s;
-    padding: 28px;
+    padding: 0px 28px 0px 28px;
     font-size: 1em;
     font-family: 'Proza Libre', sans-serif;
     border: none;

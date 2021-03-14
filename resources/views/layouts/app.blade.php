@@ -5,6 +5,7 @@
         <bgsound src="song.html" loop="infinite">
         <link rel="shortcut icon" href="assets/favicon.gif">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
         <link rel="stylesheet" media="screen and (min-width: 0px) and (max-width: 1200px)" href="{{ asset('assets/css/mid.css') }}">
@@ -24,9 +25,6 @@
             }
              document.oncontextmenu = cmenu; function cmenu() { return false; } 
         </script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div id="holder" class="header">
@@ -38,6 +36,27 @@
                     <ul>
                         <img src="/storage/{{setting('site.logo')}}" class="featured_image">
                         {{menu('Меню сайта')}}
+                         <li tabindex="1" class="online" data-html="true" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-containertitle="true" data-content="<div class='bs4'>                                <div class='d-flex justify-content-between'>
+                                    <div class='mr-3'>NightHold x10 - 3.3.5а+ </div>
+                                    <div>54</div>
+                                </div>
+                                                              <div class='d-flex justify-content-between'>
+                                    <div class='mr-3'>NightHold x2 - 3.3.5a+</div>
+                                    <div>6046</div>
+                                </div>
+                                                              <div class='d-flex justify-content-between'>
+                                    <div class='mr-3'>NightHold x3 - 3.3.5a+</div>
+                                    <div>102</div>
+                                </div>
+                                                              <div class='d-flex justify-content-between'>
+                                    <div class='mr-3'>NightHold x4 - 3.3.5a</div>
+                                    <div>6678</div>
+                                </div>
+                               </div>"><div>В игре : 300</div></li>
+
+                        
+                        
+                        
                     </ul>
                     @auth
                     
@@ -90,9 +109,10 @@
                 </ul>
                 <div id="cd-login" class="is-selected">
                     <!-- log in form -->
+                     <center><div id="errorlogin" class="text-danger" hidden></div></center>
                     <form class="cd-form" method="POST">
                         
-                        <center><div id="errorlogin" class="text-danger" hidden></div></center>
+                       
                         <p class="fieldset">
                             <label class="image-replace cd-email" for="signin-email">E-mail</label>
                             <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Эл. почта или Телефон" class="full-width has-padding has-border" >
@@ -113,13 +133,10 @@
                 </div>
                 <!-- cd-login -->
                 <div id="cd-signup">
-
-                    
-                    
-                    
+                     <center><div id="errorreg" class="text-danger" hidden></div></center>
                     <!-- sign up form -->
                     <form class="cd-form">
-                        <center><div id="errorreg" class="text-danger" hidden></div></center>
+                       
                         <p class="fieldset">
                             <label class="image-replace cd-username" for="signup-username">Username</label>
                             <input type="text" name="namereg" placeholder="Имя" class="full-width has-padding has-border">
@@ -172,12 +189,18 @@
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function() {
+            $('.online').popover({
+              trigger: 'hover'
+            })
             $("#loginBtn").click(function(e) {
-                        $("#loginBtn").attr('hidden', 'hidden').fadeIn(1000);
-                        $("#errorlogin").attr('hidden');
-                        $("#errorlogin").text('');
+                        $("#loginBtn").attr('disabled', 'disabled').fadeIn(1000);
+                        $("#errorlogin").prop("hidden", true);
+                        
 
                         $.ajaxSetup({
                             headers: {
@@ -199,9 +222,8 @@
                             },
                             success: function(data) {
                                 if ($.isEmptyObject(data.error)) {
-                                    $("#errorlogin").removeAttr('hidden');
-                                    $("#errorlogin").attr('hidden', 'hidden').fadeIn(1000);
                                     $("#errorlogin").text('Успешная авторизация').removeClass('text-danger').addClass('text-success');
+                                    $("#errorlogin").removeAttr('hidden');
                                     setTimeout(function(){
                                        document.location.href='{{ route('home') }}';
                                     }, 1500);
@@ -209,10 +231,11 @@
 
                                     
                                 } else {
-                                    $("#loginBtn").removeAttr('hidden');
-                                    $("#errorlogin").removeAttr('hidden');
+                                    $("#loginBtn").removeAttr('disabled');
                                     $("#errorlogin").text(data.error).removeClass('text-success').addClass('text-danger');
-                                    $("#errorlogin").attr('hidden', 'hidden').fadeIn(1000);
+                                    $("#errorlogin").removeAttr('hidden');
+                                   
+                                    
 
                                 }
                             }
@@ -221,8 +244,8 @@
                     });
 
                     $("#regBtn").click(function(e) {
-                        $("#regBtn").attr('hidden', 'hidden').fadeIn(1000);
-                        $("#errorreg").text('');
+                        $("#regBtn").attr('disabled', 'disabled').fadeIn(1000);
+                        $("#errorreg").prop("hidden", true);
 
                         $.ajaxSetup({
                             headers: {
@@ -251,17 +274,11 @@
                             success: function(data) {
                                 if ($.isEmptyObject(data.error)) {
                                     $("#errorreg").removeAttr('hidden');
-                                    $("#errorreg").attr('hidden', 'hidden').fadeIn(1000);
-                                    $("#errorreg").text('Регистрация успешна!').removeClass('text-danger').addClass('text-success');
-                                    setTimeout(function(){
-                                       
-                                        $('#login').modal('show');
-                                        $('#register').modal('hide');
-                                    }, 1500);
+                                    $("#errorreg").text('Регистрация успешна! Теперь вы можете войти в личный кабинет используя свой Email и пароль').removeClass('text-danger').addClass('text-success');
+                                    
                                 } else {
-                                    $("#regBtn").removeAttr('hidden');
+                                    $("#regBtn").removeAttr('disabled');
                                     $("#errorreg").removeAttr('hidden');
-                                    $("#errorreg").attr('hidden', 'hidden').fadeIn(1000);
                                     $("#errorreg").removeClass('text-success').addClass('text-danger');
                                     
                                         data.error.forEach(function(item, i, arr) {

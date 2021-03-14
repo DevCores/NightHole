@@ -32,7 +32,7 @@
             <h1>{{$post->title}}</h1>
             <h2>Опубликовано: {{Date::parse($post->created_at)->format('j F Y ')}}  </h2>
             <h2> Категория: {{$post->category->name}}  </h2>
-            <p>{!!$post->excerpt!!}</p>
+            <p>{!!$post->body!!}</p>
          </div>
          @endforeach
          @else

@@ -199,6 +199,7 @@
             })
             $("#loginBtn").click(function(e) {
                         $("#loginBtn").attr('disabled', 'disabled').fadeIn(1000);
+                        $("#errorlogin").text('');
                         $("#errorlogin").prop("hidden", true);
                         
 
@@ -245,7 +246,9 @@
 
                     $("#regBtn").click(function(e) {
                         $("#regBtn").attr('disabled', 'disabled').fadeIn(1000);
+                        $("#errorreg").text('');
                         $("#errorreg").prop("hidden", true);
+
 
                         $.ajaxSetup({
                             headers: {

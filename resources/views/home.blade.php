@@ -24,6 +24,11 @@
       </div>
       <div id="content" >
          <div id="content-box" class="col-10">
+            @if(isset($data['success']))
+            <div class="alert alert-success" role="alert">
+              {{$data['success']}}
+            </div>
+            @endif
             <div class="form-group">
              <label for="exampleFormControlSelect1">Выбрать мир</label>
              <form action="{{route('home')}}" method="POST">

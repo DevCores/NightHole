@@ -55,6 +55,7 @@ class HomeController extends Controller
         }
         if (isset($request->helpchar)) {
             (new Soap)->cmd('.tele name '.$request->helpchar.' dalaran');
+            $data['success'] = 'Персонаж '.$request->helpchar.' телепортирован';
         }
         
         

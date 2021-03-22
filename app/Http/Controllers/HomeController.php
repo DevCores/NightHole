@@ -34,8 +34,10 @@ class HomeController extends Controller
             $characters = DynamicDatabase::getChar($request->realm, $data['account']->id);
             $request->session()->forget('realm');
             $request->session()->forget('realmsselected');
+            $request->session()->forget('characterselected');
             $request->session()->put('realm', $characters);
             $request->session()->put('realmsselected', $data['realmsselected']);
+
             
         }
 

@@ -25,7 +25,7 @@ class Soap {
         try {
             $this->soap = new SoapClient(NULL, array(
                 'location' => 'http://'.env('SOAP_HOST').':'.env('SOAP_PORT').'/',
-                'uri' => 'urn:TC',
+                'uri' => 'urn:AC',
                 'style' => SOAP_RPC,
                 'login' => env('SOAP_USER'),
                 'password' => env('SOAP_PASSWORD')

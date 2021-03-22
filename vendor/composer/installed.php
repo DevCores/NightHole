@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'b14e5c086e0b886b0d1305a2a22e614a5eaf4299',
+    'reference' => '92b557537746f615c5421c05dc217d1637642b08',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -598,7 +598,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'b14e5c086e0b886b0d1305a2a22e614a5eaf4299',
+      'reference' => '92b557537746f615c5421c05dc217d1637642b08',
     ),
     'laravel/sail' => 
     array (
@@ -653,6 +653,15 @@
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'maksa988/laravel-freekassa' => 
+    array (
+      'pretty_version' => 'v4.0.0',
+      'version' => '4.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7354f03e16bb5b9a325b398547058c15f29b7df0',
     ),
     'maximebf/debugbar' => 
     array (

@@ -17,6 +17,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
+        "maksa988/laravel-freekassa": "^4.0",
         "tcg/voyager": "^1.4",
         "whoops/soap": "^1.0"
     },

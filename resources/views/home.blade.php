@@ -22,32 +22,17 @@
             </script>
          </div>
       </div>
-      <div id="content">
-         <div id="page">
-         </div>
+      <div id="content" >
+         <div id="content-box" class="col-12">
+
+            <div class="gotoplay">
+                    <a href="{{route('paymentadd')}}" class="butt">ПОПОЛНИТЬ</a>
+            </div>
          
-         <div id="features">
-            <h4 class="big">ПОЧЕМУ МЫ?</h4>
-            <div id="feature_box">
-               <img src="assets/images/featured-server.jpg">
-               <h4>Работоспособность</h4>
-               Круглосуточная поддержка, обновления мира происходят еженедельно.
-            </div>
-            <div id="feature_box">
-               <img src="assets/images/topgame.jpg">
-               <h4>Комфортная игра</h4>
-               Сервер расположен в Москве, благодаря этому у нас всегда минимальный пинг.
-            </div>
-            <div id="feature_box">
-               <img src="assets/images/featured-legion.jpg">
-               <h4>Высокий онлайн</h4>
-               Найдите новых друзей или компанию для совместной игры на нашем сервере.
-            </div>
-            <div id="feature_box">
-               <img src="assets/images/nodonate.jpg">
-               <h4>Отсутствие доната</h4>
-               На нашем сервере нельзя приобрести предметы, которые повлияют на игровой процесс.
-            </div>
+         <br>
+         <br>
+         <br>
+         <br>
          </div>
       </div>
    </div>

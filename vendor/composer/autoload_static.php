@@ -128,6 +128,8 @@ class ComposerStaticInit8fbb60508d84c51677434b67cf660870
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Maksa988\\FreeKassa\\Facades\\' => 27,
+            'Maksa988\\FreeKassa\\' => 19,
         ),
         'L' => 
         array (
@@ -433,6 +435,14 @@ class ComposerStaticInit8fbb60508d84c51677434b67cf660870
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Maksa988\\FreeKassa\\Facades\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Facades',
+        ),
+        'Maksa988\\FreeKassa\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -652,11 +662,13 @@ class ComposerStaticInit8fbb60508d84c51677434b67cf660870
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\FreeKassaController' => __DIR__ . '/../..' . '/app/Http/Controllers/FreeKassaController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndexController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\Locale' => __DIR__ . '/../..' . '/app/Http/Middleware/Locale.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -664,7 +676,9 @@ class ComposerStaticInit8fbb60508d84c51677434b67cf660870
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\DynamicDatabase' => __DIR__ . '/../..' . '/app/Models/DynamicDatabase.php',
+        'App\\Models\\FreeKassa' => __DIR__ . '/../..' . '/app/Models/FreeKassa.php',
         'App\\Models\\How' => __DIR__ . '/../..' . '/app/Models/How.php',
+        'App\\Models\\Logs' => __DIR__ . '/../..' . '/app/Models/Logs.php',
         'App\\Models\\Realmlist' => __DIR__ . '/../..' . '/app/Models/Realmlist.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -3901,6 +3915,13 @@ class ComposerStaticInit8fbb60508d84c51677434b67cf660870
         'League\\MimeTypeDetection\\FinfoMimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/FinfoMimeTypeDetector.php',
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
+        'Maksa988\\FreeKassa\\Exceptions\\InvalidPaidOrder' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Exceptions/InvalidPaidOrder.php',
+        'Maksa988\\FreeKassa\\Exceptions\\InvalidSearchOrder' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Exceptions/InvalidSearchOrder.php',
+        'Maksa988\\FreeKassa\\Facades\\FreeKassa' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Facades/FreeKassa.php',
+        'Maksa988\\FreeKassa\\FreeKassa' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/FreeKassa.php',
+        'Maksa988\\FreeKassa\\FreeKassaServiceProvider' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/FreeKassaServiceProvider.php',
+        'Maksa988\\FreeKassa\\Traits\\CallerTrait' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Traits/CallerTrait.php',
+        'Maksa988\\FreeKassa\\Traits\\ValidateTrait' => __DIR__ . '/..' . '/maksa988/laravel-freekassa/src/Traits/ValidateTrait.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',

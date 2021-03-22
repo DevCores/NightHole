@@ -61,6 +61,8 @@ return array(
     'Opis\\Closure\\' => array($vendorDir . '/opis/closure/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Maksa988\\FreeKassa\\Facades\\' => array($vendorDir . '/maksa988/laravel-freekassa/src/Facades'),
+    'Maksa988\\FreeKassa\\' => array($vendorDir . '/maksa988/laravel-freekassa/src'),
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),

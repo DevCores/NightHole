@@ -80,8 +80,8 @@
         </div>
         <div id="holder" class="intro">
         <div id="container" class="intro">
-            <video loop="" muted="" autoplay="" poster="assets/images/illidan-still.html" id="bgvid">
-                <source src="assets/images/serverintro.webm" type="video/webm">
+            <video loop="" muted="" autoplay="" poster="/assets/images/illidan-still.html" id="bgvid">
+                <source src="/assets/images/serverintro.webm" type="video/webm">
                 </source>
             </video>
             <div id="introtext">

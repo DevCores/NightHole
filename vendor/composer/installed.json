@@ -3338,6 +3338,66 @@
             "install-path": "../league/mime-type-detection"
         },
         {
+            "name": "maksa988/laravel-freekassa",
+            "version": "v4.0.0",
+            "version_normalized": "4.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maksa988/laravel-freekassa.git",
+                "reference": "7354f03e16bb5b9a325b398547058c15f29b7df0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maksa988/laravel-freekassa/zipball/7354f03e16bb5b9a325b398547058c15f29b7df0",
+                "reference": "7354f03e16bb5b9a325b398547058c15f29b7df0",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "7.*",
+                "laravel/framework": "8.*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "6.*",
+                "phpunit/phpunit": "^9.3"
+            },
+            "time": "2020-09-22T15:41:09+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maksa988\\FreeKassa\\FreeKassaServiceProvider"
+                    ],
+                    "aliases": {
+                        "FreeKassa": "Maksa988\\FreeKassa\\Facades\\FreeKassa"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Maksa988\\FreeKassa\\Facades\\": "src/Facades",
+                    "Maksa988\\FreeKassa\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "maksa988",
+                    "email": "maksa988ua@gmail.com"
+                }
+            ],
+            "description": "FreeKassa payments for Laravel",
+            "support": {
+                "issues": "https://github.com/maksa988/laravel-freekassa/issues",
+                "source": "https://github.com/maksa988/laravel-freekassa/tree/v4.0.0"
+            },
+            "install-path": "../maksa988/laravel-freekassa"
+        },
+        {
             "name": "maximebf/debugbar",
             "version": "v1.16.5",
             "version_normalized": "1.16.5.0",

@@ -36,6 +36,7 @@
              </select>
              </form>
            </div>
+           @if(Session::get('realm'))
            @if(Session::get('realm')->count() != 0)
            <form action="{{route('home')}}" method="POST">
                @csrf
@@ -49,6 +50,7 @@
            </form>
            @else
            у вас нет персонажей на этом реалме
+           @endif
            @endif
          
          <br>

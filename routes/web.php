@@ -34,8 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Оплата
 Route::get('/payment', [App\Http\Controllers\FreeKassaController::class, 'payment'])->name('payment');
 Route::get('/payment/add', [App\Http\Controllers\FreeKassaController::class, 'paymentadd'])->name('paymentadd');
-Route::post('/payment/valute', [App\Http\Controllers\FreeKassaController::class, 'paymentaddvalute'])->name('paymentaddvalute');
-Route::get('/payment/valute', [App\Http\Controllers\FreeKassaController::class, 'paymentaddvalute'])->name('paymentaddvalute');
+Route::any('/payment/valute', [App\Http\Controllers\FreeKassaController::class, 'paymentaddvalute'])->name('paymentaddvalute');
 Route::any('/payment/check', [App\Http\Controllers\IndexController::class, 'check'])->name('check');
 
 //Очистка

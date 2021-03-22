@@ -24,7 +24,7 @@ class Soap {
     public function connect() {
         try {
             $this->soap = new SoapClient(NULL, array(
-                'location' => 'http://' . env('SOAP_HOST') . ':' . env('SOAP_PORT') . '/',
+                'location' => 'http://'.env('SOAP_HOST').':'.env('SOAP_PORT').'/',
                 'uri' => 'urn:TC',
                 'style' => SOAP_RPC,
                 'login' => env('SOAP_USER'),

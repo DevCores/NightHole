@@ -7,6 +7,8 @@ use App\Models\Realmlist;
 use App\Models\DynamicDatabase;
 use \DB;
 use \Auth;
+use App\Services\Soap\Soap;
+use SoapClient;
 
 class HomeController extends Controller
 {
@@ -50,6 +52,9 @@ class HomeController extends Controller
         
         if ($request->session()->has('realm')) {
             $data['characters'] = $request->session()->get('realm');
+        }
+        if (isset($request->helpchar)) {
+            (new Soap)->cmd('.tele name '.$request->helpchar.' dalaran');
         }
         
         

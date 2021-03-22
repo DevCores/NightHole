@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Realmlist;
+use App\Models\DynamicDatabase;
+use \DB;
+use \Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +25,47 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $data = [];
+        $data['account'] = \DB::connection('auth')->table('account')->where('email', Auth::user()->email)->first();
+        if (isset($request->realm)) {
+            $data['realmsselected'] = Realmlist::where('char',$request->realm)->first()->name;
+            $characters = DynamicDatabase::getChar($request->realm, $data['account']->id);
+            $request->session()->forget('realm');
+            $request->session()->forget('realmsselected');
+            $request->session()->put('realm', $characters);
+            $request->session()->put('realmsselected', $data['realmsselected']);
+            
+        }
+
+        if (isset($request->character)) {
+            $data['characterselected'] = $request->character;
+
+            $request->session()->forget('characterselected');
+            $request->session()->put('characterselected', $data['characterselected']);
+        }
+        
+        if ($request->session()->has('realm')) {
+            $data['characters'] = $request->session()->get('realm');
+        }
+        
+        
+        
+
+        $realms = Realmlist::all();
+        foreach ($realms as $realm) {
+           $data['realms'][$realm->id] = [
+            "id" => $realm->id,
+            "name" => $realm->name,
+            "world_id" => $realm->world_id,
+            "ip" => $realm->ip,
+            "port" => $realm->port,
+            "char" => $realm->char,
+            "world" =>  $realm->world,
+           ];
+        }
+
+        return view('home', compact('data'));
     }
 }

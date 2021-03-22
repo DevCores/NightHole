@@ -20,4 +20,17 @@ class DynamicDatabase extends Model
             \DB::purge('characters');
         return $count;
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public static function getChar($database, $id)
+    {
+            \Config::set('database.connections.characters.database', $database);
+            $characters = \DB::connection('characters')->table('characters')->where('account', $id)->get();
+            \DB::purge('characters');
+        return $characters;
+    }
 }

@@ -29,7 +29,7 @@ Route::get('/setlocale/{locale}', function ($locale) {
 });
 
 //Личный кабинет
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::any('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Оплата
 Route::get('/payment', [App\Http\Controllers\FreeKassaController::class, 'payment'])->name('payment');

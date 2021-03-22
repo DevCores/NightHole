@@ -54,8 +54,9 @@ class HomeController extends Controller
             $data['characters'] = $request->session()->get('realm');
         }
         if (isset($request->helpchar)) {
-            (new Soap)->cmd('.tele name '.$request->helpchar.' dalaran');
-            $data['success'] = 'Персонаж '.$request->helpchar.' телепортирован';
+            (new Soap)->cmd('.unstuck '.$request->helpchar.'');
+            (new Soap)->cmd('.revive '.$request->helpchar.'');
+            $data['success'] = 'Персонаж '.$request->helpchar.' восстановлен';
         }
         
         

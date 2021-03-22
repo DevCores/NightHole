@@ -84,11 +84,14 @@
                 <source src="/assets/images/serverintro.webm" type="video/webm">
                 </source>
             </video>
+            @auth
+            @else
             <div id="introtext">
                 <div class="gotoplay">
                     <a  href="#" class="butt">{{__('translate.start')}}</a>
                 </div>
             </div>
+            @endauth
             @yield('content')
         </div>
         <div id="holder" class="footer">

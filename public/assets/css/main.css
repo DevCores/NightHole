@@ -979,5 +979,17 @@ if it's not present, don't show loader */
 .butt:hover::after {
  left: 0;
 }
+.butt_lk {
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    display: flex;
+    position: relative !important;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 11px;
+}
 /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/games/gam-4/gam375.cur), auto !important;} /* End https://www.cursors-4u.com */
 }

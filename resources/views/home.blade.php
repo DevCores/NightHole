@@ -52,20 +52,20 @@
            у вас нет персонажей на этом реалме
            @endif
            @endif
+  
+                         <a href="{{route('paymentadd')}}" class="butt butt_lk">ПОПОЛНИТЬ</a>
+
+
+            @if(Session::has('characterselected'))
+               <form action="{{route('home')}}" method="POST">
+                  @csrf
+                  <input type="text" name="helpchar" value="Session::has('characterselected')" hidden>
+                   <a href="#" type="submit" class="butt butt_lk">ВЫТАЩИТЬ ПЕРСОНАЖА "{{Session::get('characterselected')}}"</a>
+               </form>
+                   
+            @endif
          
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-            <div class="gotoplay">
-                    <a href="{{route('paymentadd')}}" class="butt">ПОПОЛНИТЬ</a>
-            </div>
          
-         <br>
-         <br>
-         <br>
-         <br>
          </div>
       </div>
    </div>

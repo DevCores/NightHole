@@ -59,8 +59,8 @@
             @if(Session::has('characterselected'))
                <form action="{{route('home')}}" method="POST">
                   @csrf
-                  <input type="text" name="helpchar" value="Session::has('characterselected')" hidden>
-                   <a href="#" type="submit" class="butt butt_lk">ВЫТАЩИТЬ ПЕРСОНАЖА "{{Session::get('characterselected')}}"</a>
+                  <input type="text" name="helpchar" value="Session::get('characterselected')" hidden>
+                   <a type="submit" class="butt butt_lk">ВЫТАЩИТЬ ПЕРСОНАЖА "{{Session::get('characterselected')}}"</a>
                </form>
                    
             @endif

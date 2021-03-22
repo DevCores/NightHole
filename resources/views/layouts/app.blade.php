@@ -66,7 +66,7 @@
                     </form>
                     
                     <ul class="right main-nav">
-                        <li class="xgreen-overlay"><span>{{ Auth::user()->email}}</span></li>
+                        <li class="xgreen-overlay"><span><a href="{{route('home')}}">{{ Auth::user()->email}}</a></span></li>
                     </ul>
                     @else
                     <ul class="right main-nav">

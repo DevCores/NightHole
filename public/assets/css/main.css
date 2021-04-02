@@ -572,6 +572,8 @@ cursor:pointer;
 #content {
     float: left;
     width: calc(100% - 400px);
+    display: flex;
+    justify-content: space-between;
 }
 #content h1.big {
     text-align: left;
@@ -658,7 +660,7 @@ cursor:pointer;
     width: calc(100% - 62px);
     padding: 20px;
     background: rgba(0, 0, 0, 0.6);
-    margin: 10px 0px;
+    margin: 10px 10px;
     text-align: left;
     border: 1px solid #030303;
     float: left;
